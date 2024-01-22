@@ -1,10 +1,10 @@
 {
   "name": "chickenbook-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Management system for Chickenbook",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "author": "Miloslav Jezek",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
