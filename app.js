@@ -1,5 +1,6 @@
 import express  from "express";
 import expressEjsLayouts from "express-ejs-layouts";
+import routes from "./server/routes/mainRoutes.js"
 
 const PORT = 5000 || process.env.PORT;
 const app = express();
@@ -16,13 +17,8 @@ app.use(expressEjsLayouts);
 app.set("layout", "./layout/main");
 app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  const info = {
-    title: "Homepage"
-  }
-
-  res.render("index", info);
-});
+// set routes
+app.use("/", routes)
 
 app.listen(PORT, () => {
   console.log(`=== port is listening on ${PORT} ===`)
