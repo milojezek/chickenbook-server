@@ -3,8 +3,11 @@ import customController from "../controller/controller.js";
 
 const router = express.Router();
 
-const {homePage} = customController;
+const {homePage, add} = customController;
 
 router.get("/", homePage);
+
+router.get("/add", add);
+router.post("/add", add);
 
 export default router;

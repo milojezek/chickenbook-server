@@ -6,6 +6,15 @@ const homePage = (req, res) => {
     res.render("index", info);
 }
 
+const add = (req, res) => {
+  const info = {
+    title: "Homepage"
+  }
+
+  res.send("Added successfully");
+}
+
 export default {
-  homePage
+  homePage,
+  add
 }
