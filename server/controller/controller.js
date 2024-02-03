@@ -1,3 +1,5 @@
+import memberModel from "../model/member.js";
+
 const homePage = (req, res) => {
     const info = {
       title: "Homepage"
