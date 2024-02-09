@@ -8,12 +8,22 @@ const homePage = (req, res) => {
     res.render("index", info);
 }
 
-const add = (req, res) => {
-  const info = {
-    title: "Homepage"
-  }
+const add = async (req, res) => {
 
-  res.send("Added successfully");
+  try {
+    const memberInfo = new memberModel({
+      name: "Ignac Pohoda",
+      headline: "JavaScript Developer",
+      status: "Employed"
+    })
+
+    await memberInfo.save();
+    res.send("Added successfully to the database.");
+    console.log("Successfully added.");
+  } catch(err) {
+    console.log(`The member couldn't be added.\n${err}`);
+  }
+  
 }
 
 export default {
